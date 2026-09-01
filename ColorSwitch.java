@@ -1,16 +1,6 @@
 /* 
-Project 2
-CS 1181
 Kalli Koppin
-19 October 2023
-This project is to enhance understanding of gui elemnts, java swing, and
-action listeners using standard coding practice
-
-LINKS USED FOR HELP
-Timer link: https://stackoverflow.com/questions/1006611/java-swing-timer
-JOptionPane link: https://www.javatpoint.com/java-joptionpane
-Repaint, revalidate: https://stackoverflow.com/questions/1097366/java-swing-revalidate-vs-repaint
-Audio Clip Link: https://www.geeksforgeeks.org/play-audio-file-using-java/ and https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4679187
+Color Switch
  */
 
 import javax.swing.*;
@@ -57,15 +47,15 @@ public class ColorSwitch extends JFrame implements ActionListener {
 
         // opening file clips try catch block
         try {
-            correct = AudioSystem.getAudioInputStream(new File("mixkit-correct-answer-notification-947.wav"));
+            correct = AudioSystem.getAudioInputStream(new File("sounds/mixkit-correct-answer-notification-947.wav"));
             yep = AudioSystem.getClip();
             yep.open(correct);
 
-            incorrect = AudioSystem.getAudioInputStream(new File("mixkit-tech-break-fail-2947.wav"));
+            incorrect = AudioSystem.getAudioInputStream(new File("sounds/mixkit-tech-break-fail-2947.wav"));
             nope = AudioSystem.getClip();
             nope.open(incorrect);
 
-            done = AudioSystem.getAudioInputStream(new File("mixkit-arcade-game-complete-or-approved-mission-205.wav"));
+            done = AudioSystem.getAudioInputStream(new File("sounds/mixkit-arcade-game-complete-or-approved-mission-205.wav"));
             gameOverClip = AudioSystem.getClip();
             gameOverClip.open(done);
 
