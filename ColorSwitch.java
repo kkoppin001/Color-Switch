@@ -1,86 +1,17 @@
-/*
+/* 
+Project 2
+CS 1181
 Kalli Koppin
-Color Switch Java GUI Project
-*/
+19 October 2023
+This project is to enhance understanding of gui elemnts, java swing, and
+action listeners using standard coding practice
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.sound.sampled.*;
-import java.io.*;
-import java.util.Random;
-
-public class ColorSwitch extends JFrame implements ActionListener {
-    // variable declaration
-    private JPanel content;
-    private JButton redButton;
-    private JButton greenButton;
-    private JButton yellowButton;
-    private JButton blueButton;
-    private JLabel colorLabel;
-    private JLabel wordLabel;
-    private JLabel missed;
-    private JLabel score;
-    private String[] colorNames = { "Red", "Green", "Yellow", "Blue" };
-"ColorSwitch.java" 281L, 9705B
-Color Switch Java GUI Project
-*/
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.sound.sampled.*;
-import java.io.*;
-import java.util.Random;
-
-public class ColorSwitch extends JFrame implements ActionListener {
-    // variable declaration
-    private JPanel content;
-    private JButton redButton;
-    private JButton greenButton;
-    private JButton yellowButton;
-    private JButton blueButton;
-    private JLabel colorLabel;
-    private JLabel wordLabel;
-    private JLabel missed;
-    private JLabel score;
-    private String[] colorNames = { "Red", "Green", "Yellow", "Blue" };
-    private int missedPoints = 0;
-    private Timer timer;
-    private AudioInputStream correct;
-    private Clip gameOverClip;
-    private Clip yep;
-    private Clip nope;
-/*
-Mode Selection",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null,
-                new Object[] { "Timed Mode", "Relaxed Mode" }, "Relaxed Mode");
-
-        if (modeChoice == 0) {
-            new ColorSwitch();
-        } else if (modeChoice == JOptionPane.CLOSED_OPTION) {
-            System.exit(0);
-
-        } else {
-            ColorSwitch game = new ColorSwitch();
-            game.shuffle();
-            game.timer.stop();
-
-        } // end of if else
-
-    }// end of main
-}// end of class
-kalli@charmander:~/gitRepo/myRepos/personal/Color-Switch$ vim ColorSwitch
-kalli@charmander:~/gitRepo/myRepos/personal/Color-Switch$ rm ColorSwitch
-kalli@charmander:~/gitRepo/myRepos/personal/Color-Switch$ ls
-ColorSwitch.class	ColorSwitch$1.class	sounds
-ColorSwitch.java	README.md
-kalli@charmander:~/gitRepo/myRepos/personal/Color-Switch$ vim ColorSwitch.java
-kalli@charmander:~/gitRepo/myRepos/personal/Color-Switch$ cat ColorSwitch.java
-/*
-Kalli Koppin
-Color Switch Java GUI Project
-*/
+LINKS USED FOR HELP
+Timer link: https://stackoverflow.com/questions/1006611/java-swing-timer
+JOptionPane link: https://www.javatpoint.com/java-joptionpane
+Repaint, revalidate: https://stackoverflow.com/questions/1097366/java-swing-revalidate-vs-repaint
+Audio Clip Link: https://www.geeksforgeeks.org/play-audio-file-using-java/ and https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4679187
+ */
 
 import javax.swing.*;
 import java.awt.*;
@@ -126,15 +57,15 @@ public class ColorSwitch extends JFrame implements ActionListener {
 
         // opening file clips try catch block
         try {
-            correct = AudioSystem.getAudioInputStream(new File("sounds/mixkit-correct-answer-notification-947.wav"));
+            correct = AudioSystem.getAudioInputStream(new File("mixkit-correct-answer-notification-947.wav"));
             yep = AudioSystem.getClip();
             yep.open(correct);
 
-            incorrect = AudioSystem.getAudioInputStream(new File("sounds/mixkit-tech-break-fail-2947.wav"));
+            incorrect = AudioSystem.getAudioInputStream(new File("mixkit-tech-break-fail-2947.wav"));
             nope = AudioSystem.getClip();
             nope.open(incorrect);
 
-            done = AudioSystem.getAudioInputStream(new File("soundsmixkit-arcade-game-complete-or-approved-mission-205.wav"));
+            done = AudioSystem.getAudioInputStream(new File("mixkit-arcade-game-complete-or-approved-mission-205.wav"));
             gameOverClip = AudioSystem.getClip();
             gameOverClip.open(done);
 
@@ -358,4 +289,3 @@ public class ColorSwitch extends JFrame implements ActionListener {
 
     }// end of main
 }// end of class
-
