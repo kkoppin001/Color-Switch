@@ -1,0 +1,19 @@
+# Java compiled files
+*.class
+
+# Java package files
+*.jar
+*.war
+*.ear
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# macOS files
+.DS_Store
+
+# Temporary files
+*.log
+*.tmp
